@@ -1,0 +1,145 @@
+@import "compass/utilities"
+@import "compass/css3"
+
+span.icon
+  display: inherit
+
+small
+  font-size: .8em
+
+a.playing
+  color: green
+
+#player
+  #info
+  #bar
+    position: relative
+    height: 20px
+    +border-radius(14px)
+    +linear-gradient(color-stops(#838A90, #414549))
+    +single-box-shadow(#AAA, 0, 1px, 2px)
+
+    #handle
+      position: absolute
+      width: 14px
+      height: 14px
+      margin: 2px
+      border: 1px solid #F8F8F8
+      +border-radius(14px)
+      +linear-gradient(color-stops(#F9F9F9, #DDDBDB))
+      +single-box-shadow(#AAA, 0, 1px, 2px)
+
+
+  ul#buttons
+    +horizontal-list(5px)
+    +clearfix
+    font-weight: bold
+    overflow: visible
+    margin: 10px 0
+
+    li a
+      display: inline-block
+      text-align: center
+      text-decoration: none
+      +border-radius(4px)
+      +linear-gradient(color-stops(#F9F9F9, #DDDBDB))
+      +single-box-shadow(#AAA, 0, 1px, 2px)
+      +text-shadow(white, 0, 1px, 0)
+      color: #777
+      border: 1px solid #F8F8F8
+      width: 30px
+
+#description
+  background-color: #323537
+  color: white
+
+  pre
+    margin: 0 auto
+    font-family: "Courier New", monospace
+    font-size: 12px
+    line-height: 12px
+
+.sidebar_section.panel
+  img
+    width: 100%
+
+
+.grid
+  +clearfix
+  .artist
+    overflow: hidden
+    float: left
+    text-align: center
+    width: 75px
+    margin-right: 10px
+    margin-bottom: 10px
+    height: 120px
+
+    img
+      height: 75px
+
+#active_admin_content #main_content_wrapper #main_content
+  margin-right: 530px
+#active_admin_content #sidebar
+  width: 500px
+  margin-left: -500px
+
+.release
+  +clearfix
+  .artwork
+    width: 120px
+
+  .artwork, .tracks
+    float: left
+
+#player
+  position: fixed
+  bottom: 20px
+  right: 20px
+  padding: 10px
+  width: 500px
+
+  color: #777
+  border: 1px solid #F8F8F8
+
+  +border-radius(4px)
+  +linear-gradient(color-stops(#EFEFEF, #DFE1E2))
+  +single-box-shadow(black, 0, 1px, 30px)
+  +text-shadow(white, 0, 1px, 0)
+
+  .button
+    display: inline-block
+    text-align: center
+    width: 50px
+
+  #info
+    +clearfix
+    font-size: 12px
+
+    .artist
+      float: right
+    .track
+      float: left
+      font-weight: bold
+
+  #progress-bar
+    +single-box-shadow(#AAA, -1px, -1px, 2px)
+    +border-radius(4px)
+    position: relative
+    overflow: hidden
+    margin-bottom: 15px
+
+    #seek-bar
+      +single-box-shadow(#AAA, 0, 1px, 2px)
+      background-color: #444
+      padding: 2px
+
+      #buffer-bar
+        background-color: #666
+        position: absolute
+        top: 0
+
+      #time-bar
+        background-color: #444
+        position: absolute
+        top: 0
