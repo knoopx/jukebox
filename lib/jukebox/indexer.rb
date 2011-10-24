@@ -14,8 +14,8 @@ module Jukebox
     protected
 
     def each_release(source, &block)
-      raise ArgumentError unless block_given?
-      raise ArgumentError("#{source} is not a directory") unless File.directory?(source)
+      raise "No block given" unless block_given?
+      raise "#{source} is not a directory" unless File.directory?(source)
 
       releases = []
 
