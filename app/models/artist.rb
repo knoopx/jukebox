@@ -10,6 +10,8 @@ class Artist < ActiveRecord::Base
   scope :genres_id_in, lambda { |genres| joins(:genres).where(:genres => {:id => genres}).group("artists.id") }
   scope :genres_id_not_in, lambda { |genres| ap genres; joins(:taggings).where(:taggings => {:genre_id.not_in => genres}).group("artists.id") }
 
+
+  validates_presence_of :normalized_name, :name
   validates_uniqueness_of :name
 
   before_save :normalize_name
