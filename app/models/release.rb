@@ -26,9 +26,7 @@ class Release < ActiveRecord::Base
         track.bitrate = id3.bitrate
         track.channels = id3.channels
         track.length = id3.length
-        track.artist = Artist.find_or_initialize_by_normalized_name(id3.artist.to_slug.normalize.to_s) do |artist|
-          artist.name = id3.artist
-        end
+        track.artist = Artist.find_or_create_by_normalized_name(id3.artist.to_slug.normalize.to_s, :name => id3.artist)
         years << track.year unless years.include?(track.year)
       end
 
@@ -43,9 +41,7 @@ class Release < ActiveRecord::Base
     self.various_artists = artists.size > 1
 
     self.artists = artists.map do |artist_name|
-      Artist.find_or_initialize_by_normalized_name(artist_name.to_slug.normalize.to_s) do |artist|
-        artist.name = artist_name
-      end
+      Artist.find_or_create_by_normalized_name(artist_name.to_slug.normalize.to_s, :name => artist_name)
     end
 
     true

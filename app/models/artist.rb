@@ -45,7 +45,7 @@ class Artist < ActiveRecord::Base
                         :summary => artist["bio"]["summary"],
                         :biography => artist["bio"]["content"]
 
-      self.genres = artist["tags"]["tag"].map { |tag| Genre.find_or_initialize_by_name(tag["name"]) }
+      self.genres = artist["tags"]["tag"].map { |tag| Genre.find_or_create_by_name(tag["name"]) }
     end
   end
 
