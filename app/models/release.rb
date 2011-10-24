@@ -69,7 +69,6 @@ class Release < ActiveRecord::Base
     })
 
     if album = response["album"]
-      ap response["album"]
       update_attributes :mbid => album["mbid"],
                         :image_url => album["image"].last["#text"],
                         :lastfm_url => album["url"],
