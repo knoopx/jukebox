@@ -3,6 +3,4 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 .sass-cache
-public/stylesheets/screen.css
-public/stylesheets/ie.css
-public/stylesheets/print.css
+public/stylesheets/*.css
