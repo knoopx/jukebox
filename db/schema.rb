@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(:version => 20110605132715) do
     t.string   "image_url"
     t.string   "lastfm_url"
     t.string   "listeners"
-    t.integer  "play_count"
+    t.integer  "play_count",      :default => 0
     t.text     "summary"
     t.text     "review"
     t.date     "released_at"
